@@ -1,0 +1,184 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  
+  } 
+  body {
+    background-color: rgb(31, 30, 30)
+  }
+  
+  img {
+    border-radius: 20px;
+    height: 330px;
+  }
+  
+  .nyawa {
+    height: 60px;
+    position: fixed;
+  }
+  
+    .hal {  
+      text-align: center;
+    }
+  
+    
+  
+    .notif {
+      position: fixed;
+      background-color: transparent;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.568);
+      padding-top: 100px;
+    }
+  
+    .isi {
+      
+      display: inline-block;
+      border: 2px solid lightseagreen;
+      color: white;
+      text-transform: uppercase;
+      border-radius: 20px;
+      background: rgb(31, 30, 30);
+      padding: 10px;
+      top: 100px;
+      left: 80px;
+      width: 800px;
+      height: 400px;
+    }
+  
+    .buttonfull {
+      display: inline-block;
+      position: fixed;
+      background: transparent;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      right: 0;
+    }
+
+    .isi p {
+      font-size: 2rem;
+    }
+  
+    .kunci {
+      font-size: 3rem;
+      letter-spacing: .1rem;
+      color: lightseagreen;
+    }
+  
+    .title {
+      font-size: 2rem; 
+      letter-spacing: .1rem;
+      color: lightseagreen;
+    }
+
+    .score {
+        font-size: 3rem; 
+        letter-spacing: .1rem;
+        color: lightseagreen;
+        padding-left: 30px;
+      }
+  
+      .button {
+        display: inline-block;
+        padding: 10px 30px;
+        color: white;
+        background-color: transparent;
+        border-radius: 20px;
+        border: 2px solid lightseagreen;
+        font-size: 2rem;
+        text-transform: uppercase;
+        letter-spacing: .1rem;
+        margin-top: 30px;
+        transition: .3s ease;
+        transition-property: background-color, color;
+      }
+    
+      
+    
+      .button:hover {
+        color: white;
+        background-color: lightseagreen;
+      }
+
+
+      .buttonR {
+        display: inline-block;
+        padding: 10px 30px;
+        color: white;
+        background-color: transparent;
+        border-radius: 20px;
+        border: 2px solid lightseagreen;
+        font-size: 2rem;
+        text-transform: uppercase;
+        transition: .3s ease;
+        transition-property: background-color, color;
+      }
+    
+      
+    
+      .buttonR:hover {
+        color: white;
+        background-color: lightseagreen;
+      }
+
+  
+    .input-box input {
+      display: inline-block;
+      padding: 10px 30px;
+      color: white;
+      background-color: transparent;
+      border-radius: 20px;
+      border: 2px solid lightseagreen;
+      font-size: 2rem;
+      letter-spacing: .1rem;
+      margin-top: 30px;
+      transition: .3s ease;
+      transition-property: background-color, color;
+    }
+    .input-box input:hover {
+      color: black;
+      background-color: lightseagreen;
+    }
+    .input-box input::selection {
+      background-color: yellow;
+    }
+  
+    
+  
+    .box-salah {
+      display: inline-block;
+      background: transparent;
+      width: 400px;
+      
+    }
+  
+    .box-salah p {
+      font-size: 1.5rem;
+      text-align: left;
+      color: indianred;
+    }
+  
+  
+    div.header {
+      width: 100%;
+      position: fixed;
+    }
+
+    .img-content {
+        height: 220px;
+    }
+
+    .salah-content {
+        height: 220px;
+    }
+
+    .img-jokes {
+        height: 300px;
+    }
+
+    .img-animasi {
+        height: 60px;
+    }
