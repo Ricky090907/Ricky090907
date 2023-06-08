@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tebak gambar sejarah</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    </style>
+</head>
+
+<body>
+
+    <!-- Audio -->
+    <audio src="lagu/lagu.mp3" id="linkmp3"></audio>
+    <script>audio = new Audio('' + linkmp3.src);</script>
+
+    <!--header-->
+
+    <div class="header" id="header" style="display: none;">
+        <ul>
+            <a type="button" class="buttonR" onclick="restart('index.html')">ulang</a>
+            <a id="score" class="score">0</a>
+            <img class="nyawa" src="assets/heart assessment [76CCAFF].png" alt="gagal">
+        </ul>
+
+    </div>
+
+    <!--notif-->
+
+    <div class="hal">
+
+        <!--notif salah-->
+        <div class="notif" id="notifsalah" style="display: none;">
+            <a type="button" onclick="notifsalah()" class="buttonfull"><span></span></a>
+            <div class="isi">
+                <img class="img-content" src="assets/salah-removebg-preview.png" alt="gagal">
+                <p>jawaban anda salah</p>
+                <p class="jawaban-desain">nyawa anda berkurang</p>
+            </div>
+        </div>
+        <!--notif benar-->
+        <div class="notif" id="notifbenar" style="display: none;">
+            <a type="button" onclick="notifbenar()" class="buttonfull"><span></span></a>
+            <div class="isi">
+                <img class="img-content" src="assets/benar.jgp-removebg-preview.png" alt="gagal">
+                <p>asik benar</p>
+            </div>
+        </div>
+        <!--notif kalah-->
+        <div class="notif" id="notifkalah" style="display: none;">
+            <a type="button" onclick="notifkalah('index.html')" class="buttonfull"><span></span></a>
+            <div class="isi">
+                <img src="assets/game over.png" style="margin-left: 200px;" alt="gagal" class="img-isi">
+            </div>
+        </div>
+
+    </div>
+
+    <!--halaman utama-->
+    <div id="utama" style="display: block;">
+        <div class="hal">
+            <div class="title">
+                <label>MAIN TEBAK TEBAKAN YU</label>
+            </div>
+            <div>
+                <a type="button" onclick="cek0()" class="button">mulai<span></span></a>
+            </div>
+            <div>
+                <img class="img-jokes" src="" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!--soal 1-->
+    <div id="soal1" style="display: none;">
+        <div class="hal">
+            <div class="title">
+                <p>NOMOR 1</p>
+            </div>
+            <img src="assets/Cuplikan layar 2023-05-18 160645.png" alt="">
+            <label id="kunci1" class="kunci" style="display: none;"></label>
+            <div class="input-box">
+                <input id="jawaban1" type="text">
+            </div>
+            <div class="box-salah">
+                <p id="alert1" style="display: none;">jawaban anda salah</p>
+            </div>
+            <div>
+                <a type="button" onclick="cek1()" class="button">cek jawaban<span></span></a>
+            </div>
+        </div>
+    </div>
+
+    <!--soal 2-->
+    <div id="soal2" style="display: none;">
+        <div class="hal">
+            <div class="title">
+                <p>soal nomer 2</p>
+            </div>
+            <img src="assets/soal 2.png" alt="gagal">
+            <label id="kunci2" class="kunci" style="display: none;"></label>
+            <div class="input-box">
+                <input id="jawaban2" type="text">
+            </div>
+            <div class="box-salah">
+                <p id="alert2" style="display: none;">jawaban anda salah</p>
+            </div>
+            <div>
+                <a type="button" onclick="cek2()" class="button">cek jawaban<span></span></a>
+            </div>
+        </div>
+    </div>
+
+    <!--soal 3-->
+    <div id="soal3" style="display: none;">
+        <div class="hal">
+            <div class="title">
+                <p>soal nomer 3</p>
+            </div>
+            <img src="assets/soal 3.png" alt="gagal">
+            <label id="kunci3" clas="kunci" style="display: none;"></label>
+            <div class="input-box">
+                <input id="jawaban3" type="text">
+            </div>
+            <div class="box-salah">
+                <p id="alert3" style="display: none;">jawaban anda salah</p>
+            </div>
+            <div>
+                <a type="button" onclick="cek3()" class="button">cek jawaban<span></span></a>
+            </div>
+        </div>
+    </div>
+
+
+    <!--soal 4-->
+    <div id="soal4" style="display: none;">
+        <div class="hal">
+            <div class="title">
+                <p>soal nomer 4</p>
+            </div>
+            <img src="assets/soal 4.png" alt="gagal">
+            <label id="kunci4" clas="kunci" style="display: none;">_</label>
+            <div class="input-box">
+                <input id="jawaban4" type="text">
+            </div>
+            <div class="box-salah">
+                <p id="alert4" style="display: none;">jawaban anda salah</p>
+            </div>
+            <div>
+                <a type="button" onclick="cek4()" class="button">cek jawaban<span></span></a>
+            </div>
+        </div>
+    </div>
+
+
+    <!--soal 5-->
+    <div id="soal5" style="display: none;">
+        <div class="hal">
+            <div class="title">
+                <p>soal nomer 5</p>
+            </div>
+            <img src="assets/soal 5.png" alt="gagal">
+            <label id="kunci5" clas="kunci" style="display: none;">_</label>
+            <div class="input-box">
+                <input id="jawaban5" type="text">
+            </div>
+            <div class="box-salah">
+                <p id="alert5" style="display: none;">jawaban anda salah</p>
+            </div>
+            <div>
+                <a type="button" onclick="cek5()" class="button">cek jawaban<span></span></a>
+            </div>
+        </div>
+    </div>
+
+    <!--soal 6-->
+    <div id="soal6" style="display: none;">
+        <div class="hal">
+            <div class="title">
+                <p>soal nomer 6</p>
+            </div>
+            <img src="assets/soal 6.png" alt="gagal">
+            <label id="kunci6" clas="kunci" style="display: none;">_</label>
+            <div class="input-box">
+                <input id="jawaban6" type="text">
+            </div>
+            <div class="box-salah">
+                <p id="alert6" style="display: none;">jawaban anda salah</p>
+            </div>
+            <div>
+                <a type="button" onclick="cek6()" class="button">cek jawaban<span></span></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- soal 7 -->
+    <div id="soal7" style="display: none;">
+        <div class="hal">
+            <div class="title">
+                <p>soal nomer 7</p>
+            </div>
+            <img src="assets/soal 7.png" alt="gagal">
+            <label id="kunci7" clas="kunci" style="display: none;">_</label>
+            <div class="input-box">
+                <input id="jawaban7" type="text">
+            </div>
+            <div class="box-salah">
+                <p id="alert7" style="display: none;">jawaban anda salah</p>
+            </div>
+            <div>
+                <a type="button" onclick="cek7()" class="button">cek jawaban<span></span></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- soal 8 -->
+    <div id="soal8" style="display: none;">
+        <div class="hal">
+            <div class="title">
+                <p>soal nomer 8</p>
+            </div>
+            <img src="assets/soal 8.png" alt="gagal">
+            <label id="kunci8" clas="kunci" style="display: none;">_</label>
+            <div class="input-box">
+                <input id="jawaban8" type="text">
+            </div>
+            <div class="box-salah">
+                <p id="alert8" style="display: none;">jawaban anda salah</p>
+            </div>
+            <div>
+                <a type="button" onclick="cek8()" class="button">cek jawaban<span></span></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- soal 9 -->
+    <div id="soal9" style="display: none;">
+        <div class="hal">
+            <div class="title">
+                <p>soal nomer 9</p>
+            </div>
+            <img src="assets/soal 9.png" alt="gagal">
+            <label id="kunci9" clas="kunci" style="display: none;">_</label>
+            <div class="input-box">
+                <input id="jawaban9" type="text">
+            </div>
+            <div class="box-salah">
+                <p id="alert9" style="display: none;">jawaban anda salah</p>
+            </div>
+            <div>
+                <a type="button" onclick="cek9()" class="button">cek jawaban<span></span></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- soal 10 -->
+    <div id="soal10" style="display: none;">
+        <div class="hal">
+            <div class="title">
+                <p>soal nomer 10</p>
+            </div>
+            <img src="assets/soal 10.png" alt="gagal">
+            <label id="kunci10" clas="kunci" style="display: none;">_</label>
+            <div class="input-box">
+                <input id="jawaban10" type="text">
+            </div>
+            <div class="box-salah">
+                <p id="alert10" style="display: none;">jawaban anda salah</p>
+            </div>
+            <div>
+                <a type="button" onclick="cek10()" class="button">cek jawaban<span></span></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- soal 11 -->
+    <div id="soal11" style="display: none;">
+        <div class="hal">
+            <div class="title">
+                <p>soal nomer 11</p>
+            </div>
+            <img src="assets/soal 11.png" alt="gagal">
+            <label id="kunci11" clas="kunci" style="display: none;">_</label>
+            <div class="input-box">
+                <input id="jawaban11" type="text">
+            </div>
+            <div class="box-salah">
+                <p id="alert11" style="display: none;">jawaban anda salah</p>
+            </div>
+            <div>
+                <a type="button" onclick="cek11()" class="button">cek jawaban<span></span></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- soal 12 -->
+    <div id="soal12" style="display: none;">
+        <div class="hal">
+            <div class="title">
+                <p>soal nomer 12</p>
+            </div>
+            <img src="assets/soal 12.png" alt="gagal">
+            <label id="kunci12" clas="kunci" style="display: none;">_</label>
+            <div class="input-box">
+                <input id="jawaban12" type="text">
+            </div>
+            <div class="box-salah">
+                <p id="alert12" style="display: none;">jawaban anda salah</p>
+            </div>
+            <div>
+                <a type="button" onclick="cek12()" class="button">cek jawaban<span></span></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- soal 13 -->
+    <div id="soal13" style="display: none;">
+        <div class="hal">
+            <div class="title">
+                <p>soal nomer 13</p>
+            </div>
+            <img src="assets/soal 13.png" alt="gagal">
+            <label id="kunci13" clas="kunci" style="display: none;">_</label>
+            <div class="input-box">
+                <input id="jawaban13" type="text">
+            </div>
+            <div class="box-salah">
+                <p id="alert13" style="display: none;">jawaban anda salah</p>
+            </div>
+            <div>
+                <a type="button" onclick="cek13()" class="button">cek jawaban<span></span></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- soal 14 -->
+    <div id="soal14" style="display: none;">
+        <div class="hal">
+            <div class="title">
+                <p>soal nomer 14</p>
+            </div>
+            <img src="assets/soal 14.png" alt="gagal">
+            <label id="kunci14" clas="kunci" style="display: none;">_</label>
+            <div class="input-box">
+                <input id="jawaban14" type="text">
+            </div>
+            <div class="box-salah">
+                <p id="alert14" style="display: none;">jawaban anda salah</p>
+            </div>
+            <div>
+                <a type="button" onclick="cek14()" class="button">cek jawaban<span></span></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- soal 15 -->
+    <div id="soal15" style="display: none;">
+        <div class="hal">
+            <div class="title">
+                <p>soal nomer 15</p>
+            </div>
+            <img src="assets/soal 15.png" alt="gagal">
+            <label id="kunci15" clas="kunci" style="display: none;">_</label>
+            <div class="input-box">
+                <input id="jawaban15" type="text">
+            </div>
+            <div class="box-salah">
+                <p id="alert15" style="display: none;">jawaban anda salah</p>
+            </div>
+            <div>
+                <a type="button" onclick="cek15()" class="button">cek jawaban<span></span></a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</script>
+
+</html>
